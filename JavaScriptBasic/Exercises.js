@@ -4,6 +4,42 @@
 //Sum two numbers
 //Ex: solve['10', '20']
 
+function sumNumbers(args) {
+    let firstNum=document.getElementById('firstNumber').value;
+    let secondNum=document.getElementById('secondNumber').value;
+
+    let sum=Number(firstNum)+Number(secondNum);
+
+    document.getElementById('result').innerHTML=sum;
+}
+
+function diffNumbers(args) {
+    let firstNum=document.getElementById('firstNumber').value;
+    let secondNum=document.getElementById('secondNumber').value;
+
+    let sum=Number(firstNum)-Number(secondNum);
+
+    document.getElementById('result').innerHTML=sum;
+}
+
+function multiplyNumbers(args) {
+    let firstNum=document.getElementById('firstNumber').value;
+    let secondNum=document.getElementById('secondNumber').value;
+
+    let sum=Number(firstNum)*Number(secondNum);
+
+    document.getElementById('result').innerHTML=sum;
+}
+
+function divideNumbers(args) {
+    let firstNum=document.getElementById('firstNumber').value;
+    let secondNum=document.getElementById('secondNumber').value;
+
+    let sum=Number(firstNum)/Number(secondNum);
+
+    document.getElementById('result').innerHTML=sum;
+}
+
 function solve(args) {
     let firstNum=Number(args[0]);
     let secondNum=Number(args[1]);
@@ -56,4 +92,28 @@ function symetric(args) {
         }
         return true;
     }
+}
+
+//Largest 3 Numbers
+//solve(['20','8','53','40']);
+function largestThree(args) {
+    let nums=args.sort((a,b)=>(b-a));
+
+    for(let i=0; i<nums.length;i++){
+        if(i>2){
+            break;
+        }
+        console.log(nums[i]);
+    }
+}
+
+//capitalWords(['PHP, Java and HTML']);
+
+function capitalWords(args) {
+    args=args.join(',')
+    let words=args.split(/\W+/);
+
+    words=words.filter(x=>x===x.toUpperCase());
+    words=words.filter(x=>x.length>0);
+    console.log(words.join(", "));
 }
